@@ -1,23 +1,32 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 
-const Header = () => {
+const Header = props => {
   const { textStyle, viewStyle } = styles;
 
   return (
     <View style={viewStyle}>
-      <Text style={textStyle}>Albums Header</Text>
+      <Text style={textStyle}>{props.headerText}</Text>
     </View>
   );
 };
 
 const styles = {
   viewStyle: {
-    backgroundColor: '#f8f8f8'
+    position: 'relative',
+    elevation: 2,
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 60,
+    paddingTop: 15,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    backgroundColor: '#f8f8f8',
   },
   textStyle: {
-    fontSize: 20
-  }
-}
+    fontSize: 20,
+  },
+};
 
 export default Header;
